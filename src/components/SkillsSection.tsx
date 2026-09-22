@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
-import { Monitor, Ruler } from "lucide-react";
+import {
+  ClipboardCheck,
+  ClipboardList,
+  DraftingCompass,
+  HardHat,
+  Monitor,
+  Ruler,
+} from "lucide-react";
 
 const mainSkills = [
   {
@@ -28,12 +35,41 @@ const mainSkills = [
   },
 ];
 
+const constructionSkills = [
+  {
+    name: "Material & Quantity Takeoff",
+    icon: ClipboardList,
+    description:
+      "Calculating quantities of construction and interior finishing materials.",
+  },
+  {
+    name: "Specification Compliance",
+    icon: ClipboardCheck,
+    description:
+      "Ensuring completed work meets the required specifications, standards, and design requirements.",
+  },
+  {
+    name: "Execution Drawings",
+    icon: DraftingCompass,
+    description:
+      "Preparing detailed technical and execution drawings for construction and interior works.",
+  },
+  {
+    name: "Construction Supervision",
+    icon: HardHat,
+    description:
+      "Supervising construction and finishing works throughout all project stages until final handover.",
+  },
+];
+
 const focusAreas = [
   "Interior visualization",
   "Lighting & mood",
   "Material storytelling",
-  "Spatial composition",
-  "Client-ready stills",
+  "Execution drawings",
+  "Quantity takeoff",
+  "Specification compliance",
+  "Construction supervision",
   "Technical drafting",
 ];
 
@@ -56,7 +92,7 @@ const SkillsSection = () => {
             Skills & Tools
           </h2>
           <p className="font-body text-sm leading-relaxed text-muted-foreground md:text-base">
-            High-end interior renders and accurate technical drawings—built to communicate design intent clearly.
+            Interior visualization, technical drafting, and construction &amp; finishing skills—from concept through handover.
           </p>
         </motion.div>
 
@@ -96,6 +132,51 @@ const SkillsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto mb-12 max-w-5xl md:mb-14"
+        >
+          <div className="mb-8 text-center">
+            <p className="font-body mb-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              Field expertise
+            </p>
+            <h3 className="font-display text-2xl font-semibold text-primary sm:text-3xl">
+              Construction &amp; Interior Design
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {constructionSkills.map((skill, i) => {
+              const Icon = skill.icon;
+              return (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.4 }}
+                  className="group flex gap-4 rounded-2xl border border-border/80 bg-card/70 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10 sm:p-6"
+                >
+                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl gold-gradient shadow-md shadow-primary/10">
+                    <Icon className="text-primary-foreground" size={20} strokeWidth={1.75} />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="font-display mb-1.5 text-base font-semibold text-primary sm:text-lg">
+                      {skill.name}
+                    </h4>
+                    <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                      {skill.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}

@@ -77,7 +77,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.55 }}
-          className="flex w-full max-w-md flex-col gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:justify-center sm:gap-4"
+          className="flex w-full max-w-lg flex-col gap-3 sm:mx-auto sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4"
         >
           <Button
             asChild
@@ -85,6 +85,16 @@ const HeroSection = () => {
             className="gold-gradient min-h-[48px] w-full text-primary-foreground font-body text-sm tracking-wider shadow-lg shadow-primary/20 hover:opacity-90 sm:w-auto sm:px-9"
           >
             <a href="#projects">View Projects</a>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="min-h-[48px] w-full border-primary/40 bg-background/40 text-primary font-body text-sm tracking-wider backdrop-blur-sm hover:bg-primary/10 sm:w-auto sm:px-9"
+          >
+            <a href={`${import.meta.env.BASE_URL}cv.pdf`} download="Thaar_Ata_CV.pdf">
+              Download CV
+            </a>
           </Button>
           <Button
             asChild

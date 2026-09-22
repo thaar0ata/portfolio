@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Download, Mail, MapPin, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const contactItems = [
   {
@@ -41,8 +42,23 @@ const ContactSection = () => {
             Contact Me
           </h2>
           <p className="mx-auto mt-4 max-w-md font-body text-sm text-muted-foreground">
-            Available for visualization and design work—reach out by email or phone.
+            Available for visualization, design, and construction finishing work—reach out by email or phone.
           </p>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="mt-6 min-h-[48px] border-primary/40 text-primary font-body text-sm tracking-wider hover:bg-primary/10"
+          >
+            <a
+              href={`${import.meta.env.BASE_URL}cv.pdf`}
+              download="Thaar_Ata_CV.pdf"
+              className="inline-flex items-center gap-2"
+            >
+              <Download size={16} aria-hidden />
+              Download CV
+            </a>
+          </Button>
         </motion.div>
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
