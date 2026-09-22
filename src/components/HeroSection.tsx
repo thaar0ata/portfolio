@@ -92,7 +92,7 @@ const HeroSection = () => {
             size="lg"
             className="min-h-[48px] w-full border-primary/40 bg-background/40 text-primary font-body text-sm tracking-wider backdrop-blur-sm hover:bg-primary/10 sm:w-auto sm:px-9"
           >
-            <a href={`${import.meta.env.BASE_URL}cv.pdf`} download="Thaar_Ata_CV.pdf">
+            <a href={`${import.meta.env.BASE_URL}Thaar_Ata_CV.docx`} download="Thaar_Ata_CV.docx">
               Download CV
             </a>
           </Button>

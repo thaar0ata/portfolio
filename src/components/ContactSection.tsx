@@ -51,8 +51,8 @@ const ContactSection = () => {
             className="mt-6 min-h-[48px] border-primary/40 text-primary font-body text-sm tracking-wider hover:bg-primary/10"
           >
             <a
-              href={`${import.meta.env.BASE_URL}cv.pdf`}
-              download="Thaar_Ata_CV.pdf"
+              href={`${import.meta.env.BASE_URL}Thaar_Ata_CV.docx`}
+              download="Thaar_Ata_CV.docx"
               className="inline-flex items-center gap-2"
             >
               <Download size={16} aria-hidden />
